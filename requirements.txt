@@ -1,0 +1,11 @@
+pandas
+openpyxl
+numpy
+plotly
+scikit-learn
+mlflow
+boto3
+psycopg2-binary
+python-dotenv
+jupyter
+streamlit
