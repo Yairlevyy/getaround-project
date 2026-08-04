@@ -1,14 +1,17 @@
 import pandas as pd
 import streamlit as st
 import plotly.express as px
+from pathlib import Path
 
 st.set_page_config(page_title="GetAround", layout="wide")
 st.title("GetAround, delai minimum entre deux locations")
 
+DOSSIER = Path(__file__).parent
+
 @st.cache_data
 def charger_donnees():
-    chaines = pd.read_csv("chaines_clean.csv")
-    delay = pd.read_csv("delay_clean.csv")
+    chaines = pd.read_csv(DOSSIER / "chaines_clean.csv")
+    delay = pd.read_csv(DOSSIER / "delay_clean.csv")
     return chaines, delay
 
 chaines, delay = charger_donnees()
